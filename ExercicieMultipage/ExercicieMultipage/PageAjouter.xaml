@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="ExercicieMultipage.PageAjouter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExercicieMultipage"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--grid pour l'ajout d'un article-->
+            <Grid Padding="30" Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Padding="10">
+                    <TextBox x:Name="tbx_nom"
+                             Header="Entrez le nom de l'article"/>
+                    <TextBlock x:Name="tbl_erreuNom" Foreground="Red"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Padding="10">
+                    <TextBox x:Name="tbx_prix" 
+                             Header="son prix entre (10-500)$"/>
+                    <TextBlock x:Name="tbl_erreurPrix" Foreground="Red"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2" Padding="10">
+                    <ComboBox x:Name="listeEtat" Header="Choisissez sont etat">
+                        <x:String>neuf</x:String>
+                        <x:String>usage</x:String>
+                    </ComboBox>
+                    <TextBlock x:Name="tbl_erreurEtat" Foreground="Red"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="3" Padding="10">
+                    <ComboBox x:Name="listeCategorie" Header="Choisissez sa categorie">
+                        <x:String>informatique</x:String>
+                        <x:String>cuisine</x:String>
+                        <x:String>jardin</x:String>
+                        <x:String>meuble</x:String>
+                    </ComboBox>
+                    <TextBlock x:Name="tbl_erreurCategorie" Foreground="Red"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="4" Padding="10">
+                    <TextBox x:Name="tbx_image" Header="URL de son image"/>
+                    <TextBlock x:Name="tbl_erreurURL" Foreground="Red"/>
+                </StackPanel>
+
+                <Button x:Name="btn_ajouter" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" Click="btn_ajouter_Click">
+                    Ajouter
+                </Button>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

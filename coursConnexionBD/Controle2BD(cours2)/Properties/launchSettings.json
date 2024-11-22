@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Controle2BD(cours2) (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Controle2BD(cours2) (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

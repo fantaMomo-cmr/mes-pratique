@@ -1,0 +1,93 @@
+﻿<Window
+    x:Class="AchatDeTickets.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AchatDeTickets"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="500"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <!--premiere ligne-->
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                <TextBlock Text="Achat de Tickets"
+                           FontSize="30"/>
+            </StackPanel>
+
+            <!--2eme ligne-->
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <TextBlock Text="Choix du spectacle"
+                           FontSize="20"/>
+                <ComboBox x:Name="listeSpectacles">
+                    <x:String>Don Quichotte</x:String>
+                    <x:String>Le bossu de Notre Dame</x:String>
+                    <x:String>Le fantome de l'opera</x:String>
+                </ComboBox>
+            </StackPanel>
+
+            <!--3eme ligne-->
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <TextBlock Text="Horaire des spectacles"
+                           FontSize="20"/>
+                <ComboBox x:Name="listeHeures">
+                    <x:String>16h00</x:String>
+                    <x:String>18h00</x:String>
+                    <x:String>20h00</x:String>
+                </ComboBox>
+            </StackPanel>
+
+            <!--4eme ligne-->
+            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Text="vous êtes dans quelle categorie"
+                           FontSize="20"/>
+                <ComboBox x:Name="listeCategorie">
+                    <x:String>Adulde</x:String>
+                    <x:String>65 ans et plus</x:String>
+                    <x:String>Enfant</x:String>
+                </ComboBox>
+            </StackPanel>
+            <!--5eme ligne-->
+            <StackPanel Grid.Row="4" Grid.Column="0">
+                <TextBlock  Text="Nombre de tickets souhaitez"/>
+                <TextBox x:Name="tbx_nbrTickets"/>
+            </StackPanel>
+            <!--6eme ligne-->
+            <StackPanel Grid.Row="5" Grid.Column="0">
+                <Button x:Name="myButton" Click="myButton_Click">Valider mon choix</Button>
+            </StackPanel>
+            <!--7eme ligne-->
+            <StackPanel Grid.Row="6" Grid.Column="0">
+                <TextBlock Text="verifier vos choix"/>
+                <ListView x:Name="lv_choix"/>
+            </StackPanel>
+            <!--8eme ligne-->
+            <StackPanel Grid.Row="7" Grid.Column="0">
+                <Button x:Name="Terminer"
+                        Click="Terminer_Click" >Terminer la transaction</Button>
+            </StackPanel>
+            
+            
+            
+            
+        </Grid>
+    </ScrollViewer>
+    
+    
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window
+    x:Class="Laboratoir2.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Laboratoir2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid>
+            <NavigationView  PaneDisplayMode="Left" PaneTitle="Produits du marché"
+                            SelectionChanged="NavigationView_SelectionChanged"
+                            IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
+                <NavigationView.MenuItems>
+                    <NavigationViewItemHeader Content="Menu"/>
+                    <NavigationViewItem Content="Liste des produits" x:Name="ilisteProduit" Icon="List"/>
+                    <NavigationViewItem Content="Statistique " x:Name="iStatproduit" Icon="Bookmarks"/>
+                    <NavigationViewItem Content="Recherche" x:Name="irecherche" Icon="Setting"/>
+                </NavigationView.MenuItems>
+
+                <NavigationView.FooterMenuItems>
+                    <NavigationViewItem Content="Deconnexion" x:Name="iDeconnexion" Icon="Switch"/>
+                    <NavigationViewItem Content="Aide" x:Name="iAide" Icon="Help" />
+                </NavigationView.FooterMenuItems>
+
+                <Frame x:Name="mainFrame"/>
+            </NavigationView>
+        </Grid>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,127 @@
+﻿<Window
+    x:Class="ConteneurPosition.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConteneurPosition"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--<StackPanel Orientation="Vertical" Padding="20">
+        avec le stackpanel
+
+        <TextBlock Text="TITRE"
+                   FontWeight="Bold"
+                   FontSize="35"
+                   Margin="0 0 0 20"/>
+        <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Stretch"
+                    Background="Cyan">
+            <ListView>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+                <x:String>Texte</x:String>
+            </ListView>
+        </StackPanel>
+
+
+    </StackPanel>-->
+        <!--dans le grid toutes les balises se supperpose
+    pour y remedier on utilise Grid.RowDefinition (ligne de colone) 
+    RowDefinition (les lignes) 
+    Grid.Row posuition de mes lignes 
+     ( suite de la premiere ligne)pour remedier a cela: ( c'est comme untableau )-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Bonjour" Grid.Row="0" />
+        <TextBlock Text="Au revoir"  Grid.Column="1" Grid.Row="0"/>
+        <StackPanel Background="Blue" Grid.Row="1"  Grid.ColumnSpan="2">
+            <TextBlock Text="Text"
+                 VerticalAlignment="Center"/>
+        </StackPanel>
+       
+    </Grid>
+    <!--<ScrollViewer>
+        <StackPanel>
+            <TextBlock Text="TITRE"
+                   FontWeight="Bold"
+                   FontSize="35"
+                   Margin="0 0 0 20"/>
+            <TextBlock Text="TITRE"
+                   FontWeight="Bold"
+                   FontSize="35"
+                   Margin="0 0 0 20"/>
+            <TextBlock Text="TITRE"
+                   FontWeight="Bold"
+                   FontSize="35"
+                   Margin="0 0 0 20"/>
+            <TextBlock Text="TITRE"
+                   FontWeight="Bold"
+                   FontSize="35"
+                   Margin="0 0 0 20"/>
+            <TextBlock Text="TITRE"
+                   FontWeight="Bold"
+                   FontSize="35"
+                   Margin="0 0 0 20"/>
+            <TextBlock Text="TITRE"
+                   FontWeight="Bold"
+                   FontSize="35"
+                   Margin="0 0 0 20"/>
+            <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Stretch"
+                    Background="Cyan">
+                <ListView>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                    <x:String>Texte</x:String>
+                </ListView>
+            </StackPanel>
+
+        </StackPanel>
+        
+    </ScrollViewer>-->
+    
+    
+</Window>

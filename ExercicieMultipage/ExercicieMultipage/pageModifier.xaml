@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="ExercicieMultipage.pageModifier"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExercicieMultipage"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+    <Grid Padding="30" Grid.Row="0" Grid.ColumnSpan="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Padding="10">
+            <TextBox x:Name="modifieNom"
+                             Header="Entrez le nom de l'article"/>
+            <TextBlock x:Name="tbl_erModifieNom" Foreground="Red"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Padding="10">
+            <TextBox x:Name="modifiePrix" 
+                             Header="nouveau entre (10-500)$"/>
+            <TextBlock x:Name="tbl_erModifiePrix" Foreground="Red"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2" Padding="10">
+            <ComboBox x:Name="modifieEtat" Header="nouveau etat">
+                <x:String>neuf</x:String>
+                <x:String>usage</x:String>
+            </ComboBox>
+            <TextBlock x:Name="tbl_erModifieEtat" Foreground="Red"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="3" Padding="10">
+            <ComboBox x:Name="modifieCategorie" Header="nouvelle categorie">
+                <x:String>informatique</x:String>
+                <x:String>cuisine</x:String>
+                <x:String>jardin</x:String>
+                <x:String>meuble</x:String>
+            </ComboBox>
+            <TextBlock x:Name="tbl_erModifieCategorie" Foreground="Red"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="4" Padding="10">
+            <TextBox x:Name="modifieImage" Header="nouveau URL"/>
+            <TextBlock x:Name="tbl_erModifieURL" Foreground="Red"/>
+        </StackPanel>
+        <Button x:Name="btnValider" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" Click="btnValider_Click">
+            Enregistrer
+        </Button>
+
+    </Grid>
+</Page>

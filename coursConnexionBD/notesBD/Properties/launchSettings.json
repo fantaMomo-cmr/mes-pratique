@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "notesBD (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "notesBD (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

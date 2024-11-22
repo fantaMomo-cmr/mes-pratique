@@ -1,0 +1,94 @@
+﻿<Page
+    x:Class="Laboratoir2.PageRecherche"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Laboratoir2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                <TextBlock HorizontalAlignment="Center" Margin="20" FontSize="30" FontWeight="Bold" TextDecorations="Underline">Rechercher un produit</TextBlock>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Padding="20" Grid.ColumnSpan="2">
+                <TextBlock HorizontalAlignment="Center" Margin="20" Foreground="ForestGreen" FontWeight="Bold" FontSize="20">En fonction de la categorie</TextBlock>
+                <!--<TextBox Header="entrez le nom du produit" x:Name="tbx_Nomrecherche" />-->
+                <ComboBox x:Name="cb_CategorieProduit" Header="Selectionner la categorie du produit"/>
+                <TextBlock Foreground="Red" x:Name="tbl_erreurCategorie"/>
+                <Button x:Name="Nomrecherche" Click="Nomrecherche_Click" Background="LemonChiffon">Rechercher</Button>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+                <TextBlock Foreground="Red" x:Name="tbl_erreurGrand"/>
+                <TextBlock HorizontalAlignment="Center" Margin="20" Foreground="ForestGreen" FontWeight="Bold" FontSize="20">En fonction du prix</TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <!--<ColumnDefinition Width="*"/>-->
+                    </Grid.ColumnDefinitions>
+                    <StackPanel HorizontalAlignment="Left" Grid.Column="0">
+                        <TextBox Header="Le plus petit prix" x:Name="tbx_Petitprix"/>
+                        <TextBlock Foreground="Red" x:Name="tbl_erreurPetitPrix"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" Grid.Column="2" Margin="60 0 5 5">
+                        <TextBox Header="Le plus grand prix" x:Name="tbx_Grandprix"  HorizontalAlignment="Right"/>
+                        <TextBlock Foreground="Red" x:Name="tbl_erreurGrandPrix" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+                <Button x:Name="prixrecherche" Click="prixrecherche_Click" Background="LemonChiffon">Rechercher</Button>
+            </StackPanel>
+            <StackPanel  Padding="10" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <ListView x:Name="lv_rechercheProduits"
+                      FontSize="25">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="Nom" Grid.Column="0"/>
+                                <TextBlock Text="Prix" Grid.Column="1" />
+                                <TextBlock Text="Categorie" Grid.Column="2" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:Produit">
+                            <Grid Background="White" Margin="0 10" Padding="5" CornerRadius="3">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{x:Bind Nom, Mode=OneWay}" Grid.Column="0"  VerticalAlignment="Center" FontSize="18" FontFamily="Mongolian Baiti" FontWeight="Bold"/>
+                                <TextBlock Text="{x:Bind Prix, Mode=OneWay}" Grid.Column="1"  VerticalAlignment="Center"  FontSize="18"   FontFamily="Congenial"/>
+                                <TextBlock Text="{x:Bind Categorie, Mode=OneWay}" Grid.Column="2"  VerticalAlignment="Center"  FontSize="18"   FontFamily="Congenial"/>
+
+
+                            </Grid>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

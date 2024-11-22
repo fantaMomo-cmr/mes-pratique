@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LesFichiersTexteetCSV (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "LesFichiersTexteetCSV (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

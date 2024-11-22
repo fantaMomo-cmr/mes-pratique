@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ConteneurPosition (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ConteneurPosition (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

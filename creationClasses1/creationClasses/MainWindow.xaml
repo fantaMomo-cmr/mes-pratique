@@ -1,0 +1,87 @@
+﻿<Window
+    x:Class="creationClasses.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:creationClasses"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel  HorizontalAlignment="Left">
+        <!--- pour lier les elts graphique-->
+        <!--<TextBlock
+            x:Name="tbl_texte"
+            FontSize="25"
+            Margin="20"
+            Foreground="DarkRed"
+            Text="{x:Bind client.AgeString}"
+            />--><!--
+        <TextBlock
+            x:Name="tbl_Nom"
+            FontSize="25"
+            Margin="20"
+            Foreground="{x:Bind client.Couleur, Mode=OneWay}"
+            Text="{x:Bind client.Nom}"
+        />
+        <TextBlock
+            x:Name="tbl_Age"
+            FontSize="25"
+            Margin="20"
+            Visibility="{x:Bind Visible, Mode=OneWay}"
+            Text="{x:Bind client.Age, Mode=OneWay}"
+         />-->
+        <!--
+        <TextBox x:Name="tbx"
+                 Margin="20"
+                 Header="Veuillez entrer l'age"
+                 Text="{x:Bind client.Age, Mode=TwoWay}"
+                 />
+        <TextBlock
+            x:Name="tbl_Age"
+            FontSize="25"
+            Margin="20"
+            Visibility="{x:Bind client.Visible, Mode=OneWay}"
+            Text="{x:Bind client.Age, Mode=OneWay}"
+         />-->
+        <!--pour afficher le nom de la personne a cahue clique-->
+        <TextBlock x:Name="tbl_text"/>
+        <TextBox x:Name="tbx_text" Margin="15"/>
+        <Button Name="btn"
+                Click="btn_Click">
+            Cliquez ici
+        </Button>
+        <GridView x:Name="lv_liste"
+                  SelectionChanged="lv_liste_SelectionChanged"
+                  FontSize="25">
+            <GridView.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock HorizontalAlignment="Center" Margin="20" Foreground="CadetBlue" FontSize="30">Liste des clients</TextBlock>
+                </DataTemplate>
+            </GridView.HeaderTemplate>
+            <GridView.ItemTemplate>
+                <!--DataTemplate gere les données de type clients 
+                twoWay va marcher avec les Textbox( quand l'utilisateur va rentrer des information)-->
+                <DataTemplate x:DataType="local:Clien">
+                    <StackPanel Orientation="Vertical" Width="200" Padding="12"
+                                Margin="15" HorizontalAlignment="Stretch" Background="AliceBlue">
+                        <Image Source="{x:Bind Photo}" Height="150"/>
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock  Text="{x:Bind Nom, Mode=OneWay}" FontSize="20" FontWeight="Light" Margin="5,5,5,10"/>
+                            <TextBlock Text="{x:Bind Age, Mode=OneWay}" Margin="5,5,5,10" Foreground="red" FontSize="15"/>
+                            <!--<TextBox Text="{x:Bind Nom, Mode=TwoWay}" x:Name="tbx_changer"/>-->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Click="Button_Click_1">
+                                    <SymbolIcon Symbol="Edit" Foreground="Blue"/>
+                                </Button>
+                                <Button Click="Button_Click">
+                                    <SymbolIcon Symbol="Delete" Foreground="Red"/>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+    </StackPanel>
+</Window>

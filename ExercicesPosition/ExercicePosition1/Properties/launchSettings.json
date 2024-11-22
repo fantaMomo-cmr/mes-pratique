@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ExercicePosition1 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ExercicePosition1 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

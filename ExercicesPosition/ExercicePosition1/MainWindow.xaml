@@ -1,0 +1,46 @@
+﻿<Window
+    x:Class="ExercicePosition1.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExercicePosition1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="250"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="600"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Image Source="https://randomuser.me/api/portraits/women/60.jpg" Height="300" Width="200" VerticalAlignment="Top" />
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Padding="20">
+            <TextBlock Text="Alice Mongrain"
+                       FontSize="25"/>
+            <TextBlock Text="a.mongrain@mail.com" Padding="2"/>
+            <TextBlock Text="1520 rue des tulipes" Padding="2"/>
+            <TextBlock Text="819 520 9654" Padding="2"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Profil"
+                       FontSize="25"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <TextBlock TextWrapping="Wrap" Text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. 
+                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla 
+                    ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, 
+                    mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 
+                    1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des 
+                    applications de mise en page de texte, comme Aldus PageMaker" />
+
+        </StackPanel>
+    </Grid>
+
+    
+</Window>

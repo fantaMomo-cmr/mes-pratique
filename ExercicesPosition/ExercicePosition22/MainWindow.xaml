@@ -1,0 +1,98 @@
+﻿<Window
+    x:Class="ExercicePosition22.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExercicePosition22"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Padding="20" HorizontalAlignment="Center">
+                <TextBlock Text="Ajout de produit"
+                   FontSize="40"
+                   />
+            </StackPanel>
+
+            <!--deuxiemme ligne-->
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <TextBlock Text="Nom du produit"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBox x:Name="tbx_nomProduit"/>
+            </StackPanel>
+
+            <!--troisiemme ligne-->
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <TextBlock Text="Categorie"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <ComboBox x:Name="listeDeCategories">
+                    <x:String>Informatique</x:String>
+                    <x:String>Meubles</x:String>
+                    <x:String>Electromenager</x:String>
+                </ComboBox>
+            </StackPanel>
+
+            <!--Quatrieme ligne-->
+            <StackPanel Grid.Row="3" Grid.Column="1">
+                <Button x:Name="ajouter" Click="ajouter_Click" Background="Gray" FontSize="20">Ajouter</Button>
+            </StackPanel>
+
+            <!--Cinquieme ligne-->
+            <StackPanel Grid.Row="4" Grid.Column="0">
+                <TextBlock Text="Informatique"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Grid.Column="1">
+                <TextBlock Text="Meubles"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Grid.Column="2">
+                <TextBlock Text="Electromenagers"/>
+            </StackPanel>
+
+            <!-- sixieme ligne -->
+            <StackPanel Grid.Row="5" Grid.Column="0">
+                <ListView x:Name="lv_informatique"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="1">
+                <ListView x:Name="lv_meubles"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="2">
+                <ListView x:Name="lv_Electromenagers"/>
+            </StackPanel>
+
+            <!-- septieme ligne -->
+            <StackPanel Grid.Row="6" Grid.Column="0">
+                <TextBlock x:Name="tbl_informatique"/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="1">
+                <TextBlock x:Name="tbl_meubles"/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="2">
+                <TextBlock x:Name="tbl_electro"/>
+            </StackPanel>
+
+
+
+        </Grid>
+    </ScrollViewer>
+</Window>

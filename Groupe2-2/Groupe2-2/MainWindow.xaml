@@ -1,0 +1,99 @@
+﻿<Window
+    x:Class="Groupe2_2.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Groupe2_2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <!--on ne peut avoir qu'une seule balise parent et a l'interieur on met tout les enfants-->
+    <!-- StackPanel nous aide a definir la position de nos elts-->
+    <StackPanel Orientation="Vertical" x:Name="stkpnl">
+  
+        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+        <!-- on peut l'ecre de deux facons
+          toujours donner le nom bien significatif a un identifiant (elts): on utilise Name-->
+        
+        <TextBlock x:Name="tbl_texte"
+                   FontSize="25"
+                   Margin="20"
+                   Foreground="Blue"
+                   
+                   > Mon texte 
+        </TextBlock>
+        <TextBox x:Name="tbx_nom"
+                 Width="250"
+                 HorizontalAlignment="Left"
+                 PlaceholderText="momo" 
+                 Header="entrez le texte"
+                 />
+        <ListView x:Name="lv_liste" 
+                  Header="ma liste"
+                  Margin="20"
+                  SelectionChanged="lv_liste_SelectionChanged">
+            <x:String>Un</x:String>
+            <x:String>Deux</x:String>
+            <x:String>Trois</x:String>
+
+        </ListView>
+
+
+        <!--<StackPanel>
+            <RadioButton x:Name="br1" Content="Un" />
+            <RadioButton x:Name="br2" Content="Deux" />
+            <RadioButton x:Name="br3" Content="Trois" />
+        </StackPanel>-->
+        <!--
+        <CheckBox x:Name="cb">
+            <StackPanel Orientation="Vertical">
+                <TextBlock FontSize="18" FontWeight="Bold"> Accepter les conditions</TextBlock>
+                // expliquer ma case a cocher
+                <TextBlock FontWeight="Light">vous devez accepter les condition pour continuer</TextBlock> 
+                
+            </StackPanel>
+        </CheckBox>-->
+        
+        <!-- cocher decocher
+        <CheckBox x:Name="cb"
+                  Checked="cb_Checked"
+                  Unchecked="cb_Unchecked"
+                  >
+            Accepter les conditions
+        </CheckBox>-->
+
+        <!--<CheckBox x:Name="cb"
+                  Tapped="cb_Tapped"
+     
+                  >
+            Accepter les conditions
+        </CheckBox>-->
+
+
+       <!--  2eme facon <TextBlock Text="Mon texte"/> -->
+        
+        <!--cours 2-->
+
+       
+
+        <!--<RadioButtons x:Name="couleurs"
+                      SelectedIndex="0"
+                      MaxColumns="3"
+                      Header="Background" 
+                      SelectionChanged="couleurs_SelectionChanged"
+        	>
+            <x:String>Aqua</x:String>
+            <x:String>Rose</x:String>
+            <x:String>Azure</x:String>
+        </RadioButtons>-->
+
+       
+        <!--<Image x:Name="img" 
+               Height="300"
+               Source="/Assets/avatar-generations_bssq1.jpg" />-->
+
+
+
+
+
+    </StackPanel>
+</Window>

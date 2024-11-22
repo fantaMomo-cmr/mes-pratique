@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Laboratoir2 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Laboratoir2 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

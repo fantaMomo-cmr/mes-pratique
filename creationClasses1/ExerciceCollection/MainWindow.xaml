@@ -1,0 +1,112 @@
+﻿<Window
+    x:Class="ExerciceCollection.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExerciceCollection"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--1ere colonne-->
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                <TextBlock FontSize="20">Matricule</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <TextBox x:Name="tbx_Matricule"/>
+
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <TextBlock x:Name="tbl_ErreurMatricul" Foreground="Red"/>
+            </StackPanel>
+            <!-- 2eme colonne-->
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock FontSize="20">Nom</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBox x:Name="tbx_Nom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <TextBlock x:Name="tbl_ErreurNom" Foreground="Red"/>
+            </StackPanel>
+
+            <!-- -->
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                <TextBlock FontSize="20">Prenom</TextBlock>
+                <!--<Button x:Name="myButton" Click="myButton_Click">Click Me</Button>-->
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="2">
+                <TextBox x:Name="tbx_Prenom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2">
+                <TextBlock x:Name="tbl_ErreurPrenom" Foreground="Red"/>
+            </StackPanel>
+
+            <!-- -->
+            <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal">
+                <TextBlock FontSize="20">Departement</TextBlock>
+
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="3">
+                <ComboBox x:Name="list_departement">
+                    <x:String>Comptabilité</x:String>
+                    <x:String>Logistique</x:String>
+                    <x:String>Marketing</x:String>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="3">
+                <TextBlock  x:Name="tbl_ErreurDepartement" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="3">
+                <Button x:Name="myButton" Click="myButton_Click">Ajouter</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="0" Grid.RowSpan="3">
+                <ListView x:Name="lv_listeEmployes" SelectionChanged="lv_listeEmployes_SelectionChanged_1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:Employes">
+                            <StackPanel Orientation="Vertical"
+                                        Margin="5">
+                                <!--<TextBlock Text="{x:Bind Matricule}"/>-->
+                                <TextBlock  Text="{x:Bind NomComplet}"/>
+                                <!--<TextBlock Text="{x:Bind Prenom}"/>-->
+                                <!--<TextBlock Text="{x:Bind Departement}"/>-->
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3">
+                <TextBlock x:Name="tlb_matriculDetails" Text="{x:Bind EmployesSelection.Matricule, Mode=OneWay}" FontSize="20"/>
+                <TextBlock x:Name="tbl_nomDetails" Text="{x:Bind EmployesSelection.Nom, Mode=OneWay}" FontSize="15"/>
+                <TextBlock x:Name="tbl_prenomDetail" Text="{x:Bind EmployesSelection.Prenom, Mode=OneWay}" FontSize="15"/>
+                <TextBlock x:Name="tbl_departementDetail" Text="{x:Bind EmployesSelection.Departement, Mode=OneWay}" FontSize="15"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="5" Grid.Column="1" Padding="15" Margin="10">
+                <Button x:Name="precedant" Click="precedant_Click">Precedant</Button>
+            </StackPanel>
+
+            <StackPanel  Grid.Row="5" Grid.Column="3" Padding="15" Margin="10">
+                <Button x:Name="suivant" Click="suivant_Click">Suivant</Button>
+            </StackPanel>
+        </Grid>
+
+    </ScrollViewer>
+
+
+</Window>

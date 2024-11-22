@@ -1,0 +1,17 @@
+﻿<ContentDialog
+    x:Class="validationDeDonnees.MonDialogue"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:validationDeDonnees"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    CloseButtonClick="ContentDialog_CloseButtonClick"
+    Closing="ContentDialog_Closing">
+
+    <StackPanel>
+        <TextBox x:Name="tbx_user" Margin="5" Header="Entrez le nom d'utilisateur"/>
+        <PasswordBox x:Name="pwd_user" Margin="5" Header="Entrez le mot de passe"/>
+    </StackPanel>
+</ContentDialog>

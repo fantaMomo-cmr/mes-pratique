@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="ExerciceBoiteDialogue.DetailArticle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExerciceBoiteDialogue"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Azure" x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Details de l'article" Margin="15" FontSize="35" FontFamily="Terminal" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+        <StackPanel  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="AliceBlue" CornerRadius="6">
+            <Image x:Name="img" Height="300" Width="300"/>
+            <Grid Margin="5" Padding="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel HorizontalAlignment="Center" Grid.Row="0">
+                    <TextBlock x:Name="tbl_detailNom" FontSize="20"/>
+                    <TextBlock x:Name="tbl_detailPrix" FontSize="20"/>
+                    <TextBlock x:Name="tbl_detailEtat" FontSize="20"/>
+                    <TextBlock x:Name="tbl_detailCategorie" FontSize="20"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" x:Name="modifier" Padding="5" Foreground="Aquamarine" Click="modifier_Click">
+                            <SymbolIcon Symbol="Edit"/>
+                        </Button>
+                        <Button Grid.Column="1" Padding="5" Margin="5" Foreground="Bisque" x:Name="supprimer" Click="supprimer_Click">
+                            <SymbolIcon Symbol="Delete"/>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

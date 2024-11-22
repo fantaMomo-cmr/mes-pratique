@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="Laboratoir2.pageStatistique"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Laboratoir2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <Grid Padding="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Center" Grid.Row="0" Padding="5">
+                <TextBlock FontSize="30" TextDecorations="Underline" HorizontalAlignment="Center" FontFamily="Italic" FontWeight="Bold">Statistiques des produits avec les catégories</TextBlock>
+                <TextBlock x:Name="tbl_pageVide" FontSize="20" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock FontSize="18" Grid.Row="0">Nombre de produit dans chaque categorie :</TextBlock>
+                    <ListView x:Name="lv_produitCategorie" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontSize="20"/>
+
+                    <TextBlock FontSize="18" Grid.Row="1">Total des produits :</TextBlock>
+                    <TextBlock x:Name="tbl_Total" FontSize="20" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"/>
+
+
+                    <TextBlock Grid.Row="2" FontSize="18">Produit le plus coûteux :</TextBlock>
+                    <ListView x:Name="lvPluschere" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" FontSize="20"/>
+
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+    
+</Page>

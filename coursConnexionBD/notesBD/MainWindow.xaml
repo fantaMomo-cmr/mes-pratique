@@ -1,0 +1,25 @@
+﻿<Window
+    x:Class="notesBD.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:notesBD"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Padding="20" x:Name="stkpnl">
+        <TextBlock x:Name="tbl_texte" FontSize="20"/>
+
+        <TextBox x:Name="tbx_texte" Margin="20" Header="Entrez du texte"/>
+        
+        
+        <Button x:Name="myButton" Click="myButton_Click">Cliquez ici pour lire(afficher)</Button>
+        <!--<Button x:Name="btn_ajout" Click="btn_ajout_Click">Ajouter un client</Button>
+
+        <Button x:Name="btn_miseJour" Click="btn_miseJour_Click" >Mise a Jour un client</Button>
+        <Button x:Name="btn_Delete" Click="btn_Delete_Click">Supprimer un client</Button>-->
+
+
+        <ListView x:Name="lv_lites"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="ExercicieMultipage.PageDetailleArticle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExercicieMultipage"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Azure">
+        <StackPanel HorizontalAlignment="Center" Background="Azure" Width="800">
+            <StackPanel Background="Bisque" Orientation="Vertical" Width="500" Padding="12"
+                                Margin="15" HorizontalAlignment="Stretch" >
+                <Image x:Name="img"  Height="300" Width="300"/>
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock x:Name="tbl_detailNom"  FontSize="25" Margin="5,5,5,5"/>
+                    <TextBlock x:Name="tbl_detailPrix"  FontSize="25" Margin="5,5,5,10"/>
+                    <TextBlock x:Name="tbl_detailEtat"  FontSize="25" Margin="5,5,5,10"/>
+                    <TextBlock x:Name="tbl_detailCategorie"  FontSize="25" Margin="5,5,5,10"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Button x:Name="modifier" Click="modifier_Click">
+                            <SymbolIcon Symbol="Edit" Foreground="Coral"/>
+                        </Button>
+                        <Button x:Name="suprimer" Click="suprimer_Click">
+                            <SymbolIcon Symbol="Delete" Foreground="Chartreuse"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

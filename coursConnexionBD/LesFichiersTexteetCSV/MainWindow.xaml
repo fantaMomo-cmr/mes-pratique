@@ -1,0 +1,34 @@
+﻿<Window
+    x:Class="LesFichiersTexteetCSV.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LesFichiersTexteetCSV"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel >
+        
+        <TextBlock x:Name="tbl_texte" Margin="20" FontSize="25"/>
+        
+        <TextBox x:Name="tbx_texte" Margin="20"/>
+        
+        <!--Pour le fichier texte-->
+        
+        <!--<Button x:Name="myButton" Click="myButton_Click">Sauvegarder</Button>
+
+        <Button x:Name="btn_ouvrir" Click="btn_ouvrir_Click">Ouvrir un fichier</Button>-->
+        
+        <!--pour recuperer les els de mon  ficher dans une liste view-->
+
+        
+        
+        <!--                                    Pour le fichier CSV                                                 -->
+
+        <Button x:Name="myButton" Click="myButton_Click">Ecrire</Button>
+
+        <Button x:Name="btn_ouvrir" Click="btn_ouvrir_Click">Ouvrir un fichier</Button>
+
+        <ListView x:Name="lv_liste" Margin="20"/>
+    </StackPanel>
+</Window>

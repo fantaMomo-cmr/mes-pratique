@@ -1,0 +1,33 @@
+﻿<ContentDialog
+    x:Class="ExerciceBoiteDialogue.MonDialogueAjout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExerciceBoiteDialogue"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    Closing="ContentDialog_Closing">
+
+    <StackPanel Background="#F5F4ED">
+        <TextBox x:Name="tbx_nom" Margin="5" Header="Entrez le nom de l'article"/>
+        <TextBlock x:Name="tbl_erNom" Foreground="#BA364F"/>
+        <TextBox x:Name="tbx_prix" Margin="5" Header="entrez le prix de l'article"/>
+        <TextBlock x:Name="tbl_erPrix" Foreground="#BA364F"/>
+        <ComboBox x:Name="etat" Header="choississez son etat">
+            <x:String>neuf</x:String>
+            <x:String>usagé</x:String>
+        </ComboBox>
+        <TextBlock x:Name="tbl_erEtat" Foreground="#BA364F"/>
+        <ComboBox x:Name="categorie" Header="choisissez sa categorie">
+            <x:String>Informatique</x:String>
+            <x:String>Cuisine</x:String>
+            <x:String>Jardin</x:String>
+            <x:String>Meuble</x:String>
+        </ComboBox>
+        <TextBlock x:Name="tbl_erCategorie" Foreground="#BA364F"/>
+        
+        <TextBox x:Name="tbx_url" Header="Entrez URL de l'article"/>
+        <TextBlock x:Name="tbl_erUrl" Foreground="#BA364F"/>
+    </StackPanel>
+</ContentDialog>

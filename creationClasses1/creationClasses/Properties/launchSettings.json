@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "creationClasses (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "creationClasses (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

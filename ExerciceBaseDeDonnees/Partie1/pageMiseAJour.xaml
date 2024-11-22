@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="Partie1.pageMiseAJour"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Partie1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <StackPanel HorizontalAlignment="Center" Padding="10">
+        <TextBlock FontSize="30" TextDecorations="Underline" HorizontalAlignment="Center" FontStyle="Italic">Mise A Jour du Joueur</TextBlock>
+        <Grid Padding="30">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="tbl_matricule" FontSize="25"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="tbl_nom" FontSize="25"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="tbl_prenom" FontSize="25"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="tbl_dateNaissance" FontSize="25"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch">
+                <ComboBox x:Name="com_nomEquipe" Header="Selectionner une equipe"></ComboBox>
+                <TextBlock  x:Name="tbl_erreurEqupe" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" HorizontalAlignment="Stretch">
+                <Button x:Name="btn_enregister" Click="btn_enregister_Click">Valider</Button>
+            </StackPanel>
+
+        </Grid>
+    </StackPanel>
+
+</Page>

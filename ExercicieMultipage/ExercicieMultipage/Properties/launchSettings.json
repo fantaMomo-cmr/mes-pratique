@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ExercicieMultipage (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ExercicieMultipage (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

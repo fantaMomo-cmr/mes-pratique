@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ExerciceBoiteDialogue (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ExerciceBoiteDialogue (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="Partie1.pageAjouter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Partie1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--grid pour l'ajout d'un article-->
+            <Grid Padding="30" Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Padding="10">
+                    <TextBox x:Name="tbx_nom"
+                             Header="Entrez le nom de l'equipe"/>
+                    <TextBlock x:Name="tbl_erreurNom" Foreground="Red"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Padding="10">
+                    <TextBox x:Name="tbx_ville" 
+                             Header="Entrez le nom de la ville"/>
+                    <TextBlock x:Name="tbl_erreurVille" Foreground="Red"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2" Padding="10">
+                    <TextBox x:Name="tbx_logo" Header="Entrez le logo de l'equipe"/>
+                    <TextBlock x:Name="tbl_erreurUrl" Foreground="Red"/>
+                </StackPanel>
+
+                <Button x:Name="btn_ajouter" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" Click="btn_ajouter_Click">
+                    Ajouter
+                </Button>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

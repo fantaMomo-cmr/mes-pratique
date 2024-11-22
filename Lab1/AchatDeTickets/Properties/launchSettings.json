@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AchatDeTickets (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AchatDeTickets (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

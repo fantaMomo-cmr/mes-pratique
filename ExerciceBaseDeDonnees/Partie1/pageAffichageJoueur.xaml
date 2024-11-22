@@ -1,0 +1,91 @@
+﻿<Page
+    x:Class="Partie1.pageAffichageJoueur"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Partie1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel  Padding="10">
+            <ListView x:Name="lv_listeJoueur"
+                      SelectionChanged="lv_listeJoueur_SelectionChanged"
+                  FontSize="25">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <!--<StackPanel HorizontalAlignment="Center">
+                            <TextBlock FontSize="30" TextDecorations="Underline" HorizontalAlignment="Stretch" FontStyle="Italic">Liste des joueurs</TextBlock>
+                        </StackPanel>-->
+                        <Grid Margin="0 10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBlock Text="Matricule" Grid.Column="0"/>
+                            <TextBlock Text="Nom" Grid.Column="1" />
+                            <TextBlock Text="Prénom" Grid.Column="2" />
+                            <TextBlock Text="DateNaissance" Grid.Column="3"/>
+                            <TextBlock Text="Equipe" Grid.Column="4"/>
+                        </Grid>
+
+                        
+                    </DataTemplate>
+
+
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Joueur">
+                        <Grid Background="White" Margin="0 10" Padding="5" CornerRadius="3">
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{x:Bind Matricul, Mode=OneWay}" Grid.Column="0"  VerticalAlignment="Center" FontSize="18" FontFamily="Mongolian Baiti" FontWeight="Bold"/>
+                            <TextBlock Text="{x:Bind Nom, Mode=OneWay}" Grid.Column="1"  VerticalAlignment="Center"  FontSize="18"   FontFamily="Congenial"/>
+                            <TextBlock Text="{x:Bind Prenom, Mode=OneWay}" Grid.Column="2"  VerticalAlignment="Center"  FontSize="18"   FontFamily="Congenial"/>
+                            <TextBlock Text="{x:Bind DateNaissance, Mode=OneWay}" Grid.Column="3" VerticalAlignment="Center"   FontSize="18" FontFamily="Congenial"/>
+                            <TextBlock Text="{x:Bind NomEquipe, Mode=OneWay}" Grid.Column="4" VerticalAlignment="Center"   FontSize="18" FontFamily="Congenial"/>
+
+                            <Button x:Name="deleteJoueur" 
+                                    Click="deleteJoueur_Click" 
+                                    Grid.Column="5" 
+                                    Margin="5,5,5,10" 
+                                    HorizontalAlignment="Right"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    >
+                                <SymbolIcon Symbol="Delete" Foreground="Red"/>
+                            </Button>
+                            
+                                
+                        </Grid>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+    
+</Page>

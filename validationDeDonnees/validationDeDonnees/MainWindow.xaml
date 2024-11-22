@@ -1,0 +1,15 @@
+﻿<Window
+    x:Class="validationDeDonnees.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:validationDeDonnees"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Padding="20" >
+        <TextBox x:Name="tbx_texte" Margin="20" Header="entrer du texte"/>
+        <TextBlock x:Name="tbl_erreur"/>
+        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+    </StackPanel>
+</Window>

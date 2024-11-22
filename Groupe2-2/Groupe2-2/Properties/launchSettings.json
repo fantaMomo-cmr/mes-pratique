@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Groupe2-2 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Groupe2-2 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
