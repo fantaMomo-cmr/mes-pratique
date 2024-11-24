@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ProjetFantaMelanie.ModifierAdherent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetFantaMelanie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <Grid Padding="20" x:Name="mainGrid" >
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="20" />
+            
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="30" />
+             
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Définition des colonnes -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Titre -->
+            <TextBlock 
+                Text="Modification d'un Adhérent"
+                Margin="10"
+                FontSize="32"
+                FontFamily="Segoe UI"
+                FontWeight="Bold"
+                Foreground="#4A90E2"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" >
+                
+            </TextBlock>
+
+            <!-- Champ Nom -->
+            <TextBlock Text="Nom :" FontSize="18" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="10" />
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <TextBox x:Name="tbxNomDetail"  FontSize="16" />
+                <TextBlock x:Name="tblErreurNom" Foreground="Red" FontSize="14"  />
+            </StackPanel>
+
+            <!-- Champ Prénom -->
+            <TextBlock Text="Prénom :" FontSize="18" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Margin="10" />
+            <StackPanel Grid.Row="3" Grid.Column="1">
+                <TextBox x:Name="tbxPrenomDetail"  FontSize="16" />
+                <TextBlock x:Name="tblErreurPrenom" Foreground="Red" FontSize="14" />
+            </StackPanel>
+
+            <!-- Champ Date de Naissance -->
+            <TextBlock Text="Date de naissance :" FontSize="18" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Margin="10" />
+            <StackPanel Grid.Row="4" Grid.Column="1">
+                <TextBox x:Name="tbxDateNaisDetail"  FontSize="16" />
+                <TextBlock x:Name="tblErreurdateNais" Foreground="Red" FontSize="14"  />
+            </StackPanel>
+
+            <!-- Champ Adresse -->
+            <TextBlock Text="Adresse :" FontSize="18" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0" Margin="10" />
+            <StackPanel Grid.Row="5" Grid.Column="1">
+                <TextBox x:Name="tbxAdresseDetail"  FontSize="16" />
+                <TextBlock x:Name="tblErreurAdresse" Foreground="Red" FontSize="14"  />
+            </StackPanel>
+
+            <!-- Bouton Modifier -->
+            <Button 
+                x:Name="btnModifier"
+                Content="Modifier l'adhérent"
+                FontSize="18"
+                FontWeight="SemiBold"
+                Background="#4CAF50"
+                Foreground="White"
+                Padding="10,5"
+                HorizontalAlignment="Center"
+                Grid.Row="8"
+                Grid.Column="1"
+                Click="btnModifier_Click" >
+                
+            </Button>
+        </Grid>
+    </ScrollViewer>
+</Page>

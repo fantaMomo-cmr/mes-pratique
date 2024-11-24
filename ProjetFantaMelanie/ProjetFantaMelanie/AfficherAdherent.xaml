@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ProjetFantaMelanie.AfficherAdherent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetFantaMelanie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollView>
+        <Grid>
+            <!-- Définir les lignes et colonnes -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Titre -->
+                <RowDefinition Height="*"/>
+                <!-- Liste -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--ajouter un adherent-->
+            <CommandBar Grid.Row="0" Grid.Column="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
+                <AppBarButton Icon="Add" Label="Ajouter un adherent" Click="AppBarButton_Click"  ToolTipService.ToolTip="Boite de dialogue" Background="Green"/>
+            </CommandBar>
+
+            <!-- Titre -->
+            <TextBlock Grid.Row="0" 
+                   Text="Liste des Adhérents"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="60" 
+                   FontWeight="Bold" 
+                   Foreground="#007ACC" 
+                   Margin="30"
+                   TextDecorations="Underline"/>
+
+            <!-- Contenu principal -->
+            <StackPanel Grid.Row="1" Padding="10">
+                <ListView x:Name="lv_listeAdherents"
+                      FontSize="18"
+                      Margin="0,10,0,0">
+                    <!-- En-tête -->
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,10" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="0">
+                                    <TextBlock Text="Nom" FontWeight="Bold" TextAlignment="Center"/>
+                                </Border>
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="1">
+                                    <TextBlock Text="Prénom" FontWeight="Bold" TextAlignment="Center"/>
+                                </Border>
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="2">
+                                    <TextBlock Text="Adresse" FontWeight="Bold" TextAlignment="Center"/>
+                                </Border>
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="3">
+                                    <TextBlock Text="Date de Naissance" FontWeight="Bold" TextAlignment="Center"/>
+                                </Border>
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="4">
+                                    <TextBlock Text="Âge" FontWeight="Bold" TextAlignment="Center"/>
+                                </Border>
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="5">
+                                    <TextBlock Text="Modifier" FontWeight="Bold" TextAlignment="Center"/>
+                                </Border>
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="6">
+                                    <TextBlock Text="Supprimer" FontWeight="Bold" TextAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <!-- Contenu des éléments -->
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:Adherent">
+                            <Grid  
+                              Margin="0,5" 
+                              Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                           
+                                <TextBlock Text="{x:Bind Nom, Mode=OneWay}" TextAlignment="Center" Grid.Column="0"/>
+                         
+                                <TextBlock Text="{x:Bind Prenom, Mode=OneWay}" TextAlignment="Center" Grid.Column="1"/>
+                                <TextBlock Text="{x:Bind Adresse, Mode=OneWay}" TextAlignment="Center" Grid.Column="2"/>
+                                <TextBlock Text="{x:Bind DateNaissance, Mode=OneWay}" TextAlignment="Center" Grid.Column="3"/>
+                                <TextBlock Text="{x:Bind Age, Mode=OneWay}" TextAlignment="Center" Grid.Column="4"/>
+
+                                <!-- Bouton Modifier -->
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="5">
+                                    <Button HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Content="Modifier"
+                                        Background="LightBlue"
+                                        BorderBrush="Black"
+                                        BorderThickness="1"
+                                        x:Name="btn_modifier"
+                                        Click="btn_modifier_Click"/>
+                                </Border>
+
+                                <!-- Bouton Supprimer -->
+                                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Grid.Column="6">
+                                    <Button HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                                        Content="Supprimer"
+                                        Background="LightCoral"
+                                        BorderBrush="Black" 
+                                        BorderThickness="1"
+                                            x:Name="btn_supprimer"
+                                            Click="btn_supprimer_Click"/>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </ScrollView>
+</Page>

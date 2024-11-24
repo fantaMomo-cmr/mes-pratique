@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentDialog
+    x:Class="ProjetFantaMelanie.MonDialogueAdherent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetFantaMelanie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    Closing="ContentDialog_Closing"
+    >
+
+    <ScrollViewer>
+        <Grid  Padding="5" x:Name="mainGrid" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Ajout D'un Adhérent" Margin="15" FontSize="40" 
+               FontFamily="Terminal" Grid.ColumnSpan="2" FontWeight="SemiBold"
+               HorizontalAlignment="Center"/>
+
+
+            <StackPanel Grid.Row="1" Padding="20">
+                <TextBox x:Name="tbxNomAjout"  Header="Nom :" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurNom" Foreground="Red" FontSize="15" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
+                <TextBox x:Name="tbxPrenomAjout"  Header="Prenom :"  VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurPrenom" Foreground="Red" FontSize="15" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Padding="20">
+                <TextBox x:Name="tbxDateNaisAjout"  Header="date de naissance "  VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurdateNais" Foreground="Red" FontSize="15" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="1" Padding="20">
+                <TextBox x:Name="tbxAdresseAjout"  Header="Adresse "  VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurAdresse" Foreground="Red" FontSize="15" />
+            </StackPanel>
+            
+
+        </Grid>
+    </ScrollViewer>
+</ContentDialog>
