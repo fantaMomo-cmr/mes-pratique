@@ -69,7 +69,7 @@ namespace Laboratoir2
                 foreach (var ligne in lignes)
                 {
                     var v = ligne.Split(";");
-                    Singleton.getInstance().ajouterProduit(new Produit { Nom = v[0], Prix = Convert.ToDouble(v[1]), Categorie = v[2]});
+                    Singleton.getInstance().ajouterProduit(new Produit { Nom = v[0], Prix = Convert.ToDouble(v[1]), Categorie = v[2] });
                 }
                 Singleton.getInstance().chargerDonneesProduits();
             }
