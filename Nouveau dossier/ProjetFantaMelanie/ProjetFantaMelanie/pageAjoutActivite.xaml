@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ProjetFantaMelanie.pageAjoutActivite"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetFantaMelanie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel HorizontalAlignment="Center" Padding="10">
+        <TextBlock HorizontalAlignment="Center" Margin="20" FontSize="30" FontWeight="Bold" TextDecorations="Underline" FontStyle="Italic">Entrez les informations de l'activité</TextBlock>
+        <Grid Padding="30">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <!--<StackPanel  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Padding="30">
+                <TextBox x:Name="tbx_idActivite" Header="Entrez l'id de l'activite" />
+                <TextBlock x:Name="tblErreurId" FontStyle="Italic" Foreground="Red"/>
+            </StackPanel>-->
+            <StackPanel  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch">
+                <TextBox x:Name="tbx_nom"  Header="Entrez le nom de l'activité"/>
+                <TextBlock x:Name="tblErreurNom" FontStyle="Italic" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch">
+                <TextBox x:Name="tbx_type" Header="Entrez le type de l'activité"/>
+                <TextBlock x:Name="tblErreurType" FontStyle="Italic" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch">
+                <TextBox x:Name="tbx_coutOrganisation"  Header="Entrez le coût d'organisation de l'activité"/>
+                <TextBlock x:Name="tblErreurcout" FontStyle="Italic" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch">
+                <TextBox x:Name="tbx_prixvente"  Header="Entrez le prix de vente de l'activité"/>
+                <TextBlock x:Name="tblErreurPrix" FontStyle="Italic" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch">
+                <TextBox x:Name="tbx_logo"  Header="Entrez le lien de l'image de l'activité"/>
+                <TextBlock x:Name="tblErreurlogo" FontStyle="Italic" Foreground="Red"/>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Grid.Row="6" HorizontalAlignment="Stretch">
+                <Button x:Name="btn_ajoutActivite" Click="btn_ajoutActivite_Click">
+                    valider
+                </Button>
+            </StackPanel>
+
+        </Grid>
+    </StackPanel>
+</Page>

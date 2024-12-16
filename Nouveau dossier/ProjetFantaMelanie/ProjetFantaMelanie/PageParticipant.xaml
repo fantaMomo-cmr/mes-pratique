@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ProjetFantaMelanie.PageParticipant"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetFantaMelanie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollView Padding="10">
+        <StackPanel Padding="30">
+            
+            <TextBlock HorizontalAlignment="Center" Margin="20" FontSize="30" FontWeight="Bold" TextDecorations="Underline"> Liste des participants</TextBlock>
+            <Grid Padding="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel  Padding="10">
+                    <ListView x:Name="lv_listeParticipant"
+                        FontSize="25">
+                        <ListView.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0 10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <!--<ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>-->
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Participant" Grid.Column="0"/>
+                                    <TextBlock Text="Seance" Grid.Column="1" />
+                                    <TextBlock Text="Adherent" Grid.Column="2" />
+                                    <TextBlock Text="Note" Grid.Column="3"/>
+                                    <!--<TextBlock Text="NbrPlace" Grid.Column="4"/>-->
+                                </Grid>
+
+
+                            </DataTemplate>
+
+
+                        </ListView.HeaderTemplate>
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="local:Participation">
+                                <Grid Background="White" Margin="0 10" Padding="5" CornerRadius="3">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="{x:Bind Id_participation, Mode=OneWay}" Grid.Column="0"  VerticalAlignment="Center" FontSize="18" FontFamily="Mongolian Baiti" FontWeight="Bold"/>
+                                    <TextBlock Text="{x:Bind Id_seance, Mode=OneWay}" Grid.Column="1"  VerticalAlignment="Center"  FontSize="18"   FontFamily="Congenial"/>
+                                    <TextBlock Text="{x:Bind Id_adherent, Mode=OneWay}" Grid.Column="2"  VerticalAlignment="Center"  FontSize="18"   FontFamily="Congenial"/>
+                                    <TextBlock Text="{x:Bind Note, Mode=OneWay}" Grid.Column="3" VerticalAlignment="Center"   FontSize="18" FontFamily="Congenial"/>
+                                    <!--<TextBlock Text="{x:Bind Nbr_place, Mode=OneWay}" Grid.Column="4" VerticalAlignment="Center"   FontSize="18" FontFamily="Congenial"/>-->
+
+
+
+                                </Grid>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
+    </ScrollView>
+</Page>

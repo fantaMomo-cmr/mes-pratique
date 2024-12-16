@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentDialog
+    x:Class="ProjetFantaMelanie.MonDialogueConnexion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetFantaMelanie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    Closing="ContentDialog_Closing">
+
+    <StackPanel>
+        
+        <ComboBox x:Name="cbxRole" SelectionChanged="cbxRole_SelectionChanged" Header="Choisissez votre rôle" Margin="0,0,0,10">
+            <ComboBoxItem Content="Administrateur" />
+            <ComboBoxItem Content="Adhérent"/>
+        </ComboBox>
+        <TextBlock x:Name="tbl_erreurRole" Foreground="Red"/>
+
+        <!--Administrateur -->
+        <StackPanel x:Name="adminPanel" Visibility="Collapsed" Margin="0,20,0,0">
+            <TextBox x:Name="tbx_AdminId"  Header="Identifiant "/>
+            <TextBlock x:Name="tbl_erreurIdAdmin" Foreground="Red"/>
+            
+            <PasswordBox x:Name="tbx_AdminPassword" Header="Mot de passe "/>
+            <TextBlock x:Name="tbl_erreurMotDePasse" Foreground="Red"/>
+        </StackPanel>
+
+        <!--Adhérent -->
+        <StackPanel x:Name="adherentPanel" Visibility="Collapsed" Margin="0,20,0,0">
+            <TextBox x:Name="tbx_AdherentNumber"  Header="Identifiant"/>
+            <TextBlock x:Name="tbl_erreurIDAdherent" Foreground="Red"/>
+        </StackPanel>
+        
+    </StackPanel>
+
+</ContentDialog>

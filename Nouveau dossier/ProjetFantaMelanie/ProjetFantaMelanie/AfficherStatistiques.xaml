@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ProjetFantaMelanie.AfficherStatistiques"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetFantaMelanie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollView>
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Titre principal -->
+            <Border Grid.Row="0" Grid.ColumnSpan="4" Padding="20" CornerRadius="50" Background="Transparent">
+                <TextBlock Text="Statistiques des Activités" FontSize="60" FontWeight="Bold" TextDecorations="Underline" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Green" />
+            </Border>
+
+            <!-- Nombre total d'adhérents -->
+            <Border Grid.Row="1" Grid.Column="0" Padding="15" Margin="10" BorderBrush="Green" BorderThickness="3" CornerRadius="50">
+                <StackPanel>
+                    <TextBlock Text="Nombre total d'adhérents" FontSize="22" FontWeight="Bold" Margin="10" TextDecorations="Underline" />
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="Total : " FontSize="18" Width="220" VerticalAlignment="Center" />
+                        <TextBlock x:Name="tbl_art_total" FontSize="18" FontWeight="Bold" Foreground="Green" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Nombre total d'activités -->
+            <Border Grid.Row="1" Grid.Column="1" Padding="15" Margin="10" BorderBrush="Green" BorderThickness="3" CornerRadius="50">
+                <StackPanel>
+                    <TextBlock Text="Nombre total d'activités" FontSize="22" FontWeight="Bold" Margin="10" TextDecorations="Underline" />
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="Total : " FontSize="18" Width="220" VerticalAlignment="Center" />
+                        <TextBlock x:Name="tbl_art_total_activite" FontSize="18" FontWeight="Bold" Foreground="Green" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Nombre d'adhérents par activité -->
+            <Border Grid.Row="1" Grid.Column="2" Padding="15" Margin="10" BorderBrush="Green" BorderThickness="3" CornerRadius="50">
+                <ListView x:Name="lv_totauxCategories" Width="800">
+                    <ListView.Header>
+                        <TextBlock Text="Adhérents par activité" FontSize="22" FontWeight="Bold" Margin="10" TextDecorations="Underline" />
+                    </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <TextBlock Text="{Binding NomActivite}" FontSize="18" FontWeight="Bold" Width="200" VerticalAlignment="Center" />
+                                    <TextBlock Text="{Binding NbrTotalAdherent}" FontSize="18" Foreground="Green" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                <!--</StackPanel>-->
+            </Border>
+
+            <!-- Moyenne des notes par activité -->
+            <Border Grid.Row="1" Grid.Column="4" Padding="15" Margin="10" BorderBrush="Green" BorderThickness="3" CornerRadius="50">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="Moyenne notes par activité" FontSize="22" FontWeight="Bold" Margin="10" TextDecorations="Underline" />
+                    
+                    <ListView x:Name="lv_moy_notes" Width="500">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <TextBlock Text="{Binding NomActivite}" FontSize="18" FontWeight="Bold" Width="200" VerticalAlignment="Center" />
+                                    <TextBlock Text="{Binding MoyenneNotesParAct}" FontSize="18" Foreground="Green" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Border>
+
+            <!-- Moyenne globale des séances d'activités -->
+            <Border Grid.Row="2" Grid.Column="0" Padding="15" Margin="10" BorderBrush="Green" BorderThickness="3" CornerRadius="50">
+                <StackPanel>
+                    <TextBlock Text="Moyenne globale des séances " FontSize="22" FontWeight="Bold" Margin="10" TextDecorations="Underline" />
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="Moyenne Globale : " FontSize="18" Width="220" VerticalAlignment="Center" />
+                        <TextBlock x:Name="tbl_moy_globale_activite" FontSize="18" FontWeight="Bold" Foreground="Green" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!--l'activité ayant le plus grand nombre de seance organisée-->
+            <Border Grid.Row="2" Grid.Column="1" Padding="15" Margin="10" BorderBrush="Green" BorderThickness="3" CornerRadius="50">
+                <StackPanel>
+                    <TextBlock Text="Activité ayant plus de séances" FontSize="22" FontWeight="SemiBold" Margin="0,0,0,10" TextDecorations="Underline"  />
+
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                        <TextBlock Text="Nom : " FontSize="18" Width="200" />
+                        <TextBlock x:Name="tbl_nom" FontSize="18" FontWeight="Bold" Foreground="#007ACC" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                        <TextBlock Text="Type : " FontSize="18" Width="200" />
+                        <TextBlock x:Name="tbl_type" FontSize="18" FontWeight="Bold" Foreground="#007ACC" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                        <TextBlock Text="Cout d'organisation : " FontSize="18" Width="200" />
+                        <TextBlock x:Name="tbl_cout_organisation" FontSize="18" FontWeight="Bold" Foreground="#007ACC" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                        <TextBlock Text="Prix de vente : " FontSize="18" Width="200" />
+                        <TextBlock x:Name="tbl_prix_vente" FontSize="18" FontWeight="Bold" Foreground="#007ACC" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                        <TextBlock Text="Total séances : " FontSize="18" Width="200" />
+                        <TextBlock x:Name="tbl_total_seance" FontSize="18" FontWeight="Bold" Foreground="#007ACC" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!--Moyenne des séances par Activité-->
+            <Border Grid.Row="2" Grid.Column="2" Padding="15" Margin="10" BorderBrush="Green" BorderThickness="3" CornerRadius="50">
+                <StackPanel>
+                    <TextBlock Text="Moyenne séances par activité" FontSize="22" FontWeight="SemiBold" Margin="0,0,0,10" TextDecorations="Underline"  />
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                        <TextBlock Text="Moyenne Séances : " FontSize="18" Width="220" />
+                        <TextBlock x:Name="tbl_moy_seance" FontSize="18" FontWeight="Bold" Foreground="#007ACC"  />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+
+
+            <ListView x:Name="lv_adherent_seance" Width="Auto" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center">
+                        <ListView.Header>
+                            <StackPanel>
+                                <TextBlock Text="Information sur des adhérents ayant participé à une séance" FontSize="22" FontWeight="Bold" Margin="15" TextDecorations="Underline" HorizontalAlignment="Center"/>
+                                <TextBlock Text="    Nom Complet                  Activité                           Date de la séance                     Heure" 
+                                           Margin="5" FontSize="18" 
+                                           FontWeight="Bold"/>
+                            </StackPanel>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <TextBlock Text="{Binding NomComplet}" FontSize="18" Foreground="Green" VerticalAlignment="Center" Margin="5" Width="200" />
+                                    <TextBlock Text="{Binding NomActivite}" FontSize="18" FontWeight="Bold"  VerticalAlignment="Center" Width="200" />
+                            <TextBlock Text="{Binding DateNaissance}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Width="250" />
+                                    <TextBlock Text="{Binding Adresse}" FontSize="18"  VerticalAlignment="Center" Width="auto" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+               
+            
+
+  
+
+    
+
+ 
+
+        </Grid>
+    </ScrollView>
+</Page>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ProjetFantaMelanie (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ProjetFantaMelanie (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
