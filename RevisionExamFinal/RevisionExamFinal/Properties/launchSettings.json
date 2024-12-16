@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RevisionExamFinal (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "RevisionExamFinal (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
