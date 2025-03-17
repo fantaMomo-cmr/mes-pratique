@@ -20,6 +20,7 @@ namespace ExerciceBoiteDialogue
 {
     public sealed partial class MonDialogueAjout : ContentDialog
     {
+        Article article;
         public string Nom { get; set; }
         public double Prix { get; set; }
         public string Etat { get; set; }

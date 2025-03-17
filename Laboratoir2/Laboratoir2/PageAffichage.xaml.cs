@@ -53,6 +53,7 @@ namespace Laboratoir2
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
             picker.FileTypeFilter.Add(".csv");
 
+            // noublie pas de creer une classe service
             var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(ClasseService.mainWindow);
             WinRT.Interop.InitializeWithWindow.Initialize(picker, hWnd);
 
